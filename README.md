@@ -1,4 +1,5 @@
 # color-orgy
+A curation of Nigerian music albums.
 
 ## Build Setup
 
