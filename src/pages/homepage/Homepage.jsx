@@ -1,9 +1,14 @@
 import React from 'react'
+import GridLayout from '../../components/gridLayout/GridLayout'
+import Header from '../../components/header/Header'
 
 const Homepage = () => {
   return (
-    <div className='text-center'>
-        <h1 className='text-3xl font-bold underline'>Homepage</h1>
+    <div className='h-screen'>
+        <Header />
+        <div className='w-screen'>
+            <GridLayout />
+        </div>
     </div>
   )
 }
