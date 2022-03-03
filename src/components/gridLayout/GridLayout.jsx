@@ -5,12 +5,12 @@ import { useEffect, useState } from 'react'
 
 const GridLayout = () => {
 
-  const [coverDetails, setCoverDetails] = useState([])
+  const [covers, setCovers] = useState([])
 
   useEffect(() => {
     const getCoverData = async() => {
-      const coverData = await  fetchCoverDetails()
-      setCoverDetails(coverData)
+      const coversData = await fetchCoverDetails()
+      setCovers(coversData)
     }
 
     getCoverData()
@@ -18,57 +18,26 @@ const GridLayout = () => {
   
 
   const fetchCoverDetails = async() => {
-    const fetchData = await fetch('http://localhost:3000/covers')
+    const fetchData = await fetch('http://localhost:3000/db.json', {
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+      }
+    )
 
     const retrievedData = await fetchData.json()
 
     return retrievedData
   }
 
-  console.log(coverDetails)
-
   return (
     <div className='w-screen grid grid-cols-3 lg:grid-cols-6  gap-y-5'>
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
-        <AlbumCard />
+      {
+        covers.map((cover, index) => {
+          return <AlbumCard key={index} cover={cover}/>
+        })
+      }
     </div>
   )
 }
