@@ -1,4 +1,4 @@
-import { render } from "react-dom";
+
 import {
   Routes,
   Route,
