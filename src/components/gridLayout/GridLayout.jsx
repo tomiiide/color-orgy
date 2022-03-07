@@ -19,7 +19,7 @@ const GridLayout = () => {
   
 
   const fetchCoverDetails = async() => {
-    const fetchData = await fetch('http://localhost:3002/db.json', {
+    const fetchData = await fetch('https://color-orgy.vercel.app/db.json', {
       headers : { 
         'Content-Type': 'application/json',
         'Accept': 'application/json'
