@@ -35,7 +35,8 @@ const GridLayout = () => {
 
     return retrievedData
   }
-  console.log(covers)
+
+  
   return (
     <div className='w-screen grid grid-cols-3 lg:grid-cols-6  gap-y-5'>
       {
