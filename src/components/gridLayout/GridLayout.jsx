@@ -1,10 +1,14 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import AlbumCard from "../albumCard/AlbumCard";
 
 
 
 
 const GridLayout = () => {
+
+  const POST = process.env.FETCH_URL;
+
+  const fetchUrl = ((POST) ? POST : 'http://localhost:3000/db.json');
 
   const [covers, setCovers] = useState([])
 
@@ -19,7 +23,7 @@ const GridLayout = () => {
   
 
   const fetchCoverDetails = async() => {
-    const fetchData = await fetch('https://color-orgy.vercel.app/db.json', {
+    const fetchData = await fetch(fetchUrl, {
       headers : { 
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -39,8 +43,6 @@ const GridLayout = () => {
           return <AlbumCard key={index} cover={cover} position={index}/>
         })
       }
-
-     
     </div>
   )
 }
