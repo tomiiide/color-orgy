@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import AlbumCard from "../albumCard/AlbumCard";
 
 
-
-
 const GridLayout = () => {
 
   const POST = process.env.FETCH_URL;
@@ -17,9 +15,8 @@ const GridLayout = () => {
       const coversData = await fetchCoverDetails()
       setCovers(coversData)
     }
-
     getCoverData()
-  }, [])
+  })
   
 
   const fetchCoverDetails = async() => {
