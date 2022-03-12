@@ -5,7 +5,7 @@ import Paths from './utils/paths/Paths';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App dark">
       <BrowserRouter>
         <Paths />
       </BrowserRouter>
