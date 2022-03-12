@@ -4,7 +4,7 @@ import Header from "../../components/header/Header";
 import Loadingpage from "../../components/loadingpage/Loadingpage";
 
 const Homepage = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -13,6 +13,7 @@ const Homepage = () => {
       setLoading(false);
     }, 5000);
   }, []);
+  
   return (
     <div
       className={`h-screen overflow-x-hidden ${
@@ -20,12 +21,12 @@ const Homepage = () => {
       }`}
     >
       {loading ? (
-        <Loadingpage />
+        <Loadingpage isDarkMode={isDarkMode} />
       ) : (
         <>
           <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
           <div className="w-screen">
-            <GridLayout />
+            <GridLayout isDarkMode={isDarkMode} />
           </div>
         </>
       )}

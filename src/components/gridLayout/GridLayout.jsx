@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import AlbumCard from "../albumCard/AlbumCard";
 
 
-const GridLayout = () => {
+const GridLayout = ({ isDarkMode }) => {
 
   const POST = process.env.FETCH_URL;
 
-  const fetchUrl = ((POST) ? POST : 'http://localhost:3002/db.json');
+  const fetchUrl = ((POST) ? POST : 'http://localhost:3000/db.json');
 
   const [covers, setCovers] = useState([])
 
@@ -36,7 +36,9 @@ const GridLayout = () => {
 
   
   return (
-    <div className='w-screen grid grid-cols-3 lg:grid-cols-6  gap-y-5'>
+    <div className={`w-screen grid grid-cols-3 lg:grid-cols-6  gap-y-5 ${
+      isDarkMode ? "dark:bg-black dark:text-white" : "bg-white text-black"
+    }`}>
       {
         covers.map((cover, index) => {
           return <AlbumCard key={index} cover={cover} position={index}/>
