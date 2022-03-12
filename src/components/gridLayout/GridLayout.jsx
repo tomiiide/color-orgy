@@ -41,7 +41,7 @@ const GridLayout = ({ isDarkMode }) => {
     }`}>
       {
         covers.map((cover, index) => {
-          return <AlbumCard key={index} cover={cover} position={index}/>
+          return <AlbumCard key={index} cover={cover} position={index} isDarkMode={isDarkMode}/>
         })
       }
     </div>
