@@ -7,12 +7,12 @@ const Homepage = () => {
 
   const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-    }, 5000)
-  }, [])
+  // useEffect(() => {
+  //   setLoading(true)
+  //   setTimeout(() => {
+  //     setLoading(false)
+  //   }, 5000)
+  // }, [])
   
 
   return (
