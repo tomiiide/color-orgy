@@ -17,7 +17,7 @@ const Homepage = () => {
   return (
     <div
       className={`h-screen overflow-x-hidden ${
-        isDarkMode ? "dark:bg-black dark:text-white" : ""
+        isDarkMode ? "dark:bg-black dark:text-[#FFFFFFB2]" : ""
       }`}
     >
       {loading ? (
