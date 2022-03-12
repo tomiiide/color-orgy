@@ -4,7 +4,7 @@ import AlbumCard from "../albumCard/AlbumCard";
 
 const GridLayout = ({ isDarkMode }) => {
 
-  const POST = process.env.VERCEL_URL;
+  const POST = process.env.FETCH_URL;
 
   const fetchUrl = ((POST) ? POST : 'http://localhost:3000/db.json');
 
