@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import AlbumCard from "../albumCard/AlbumCard";
 
 
-
-
 const GridLayout = () => {
 
   const POST = process.env.FETCH_URL;
@@ -17,7 +15,6 @@ const GridLayout = () => {
       const coversData = await fetchCoverDetails()
       setCovers(coversData)
     }
-
     getCoverData()
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
