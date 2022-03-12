@@ -6,7 +6,7 @@ const GridLayout = () => {
 
   const POST = process.env.FETCH_URL;
 
-  const fetchUrl = ((POST) ? POST : 'http://localhost:3000/db.json');
+  const fetchUrl = ((POST) ? POST : 'http://localhost:3002/db.json');
 
   const [covers, setCovers] = useState([])
 
@@ -16,7 +16,8 @@ const GridLayout = () => {
       setCovers(coversData)
     }
     getCoverData()
-  })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
   
 
   const fetchCoverDetails = async() => {
