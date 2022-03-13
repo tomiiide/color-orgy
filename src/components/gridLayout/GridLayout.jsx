@@ -12,6 +12,8 @@ const GridLayout = ({ isDarkMode }) => {
 
   const fetchUrl = (!(WTF) ? 'http://localhost:3000/db.json' : `${WTF}/db.json`); 
 
+  console.log(fetchUrl)
+
   const [covers, setCovers] = useState([])
 
   useEffect(() => {
