@@ -4,9 +4,9 @@ import AlbumCard from "../albumCard/AlbumCard";
 
 const GridLayout = ({ isDarkMode }) => {
 
-  const POST = process.env.FETCH_URL;
+  const POST = process.env.NODE_ENV;
 
-  const fetchUrl = ((POST) ? POST : 'http://localhost:3000/db.json');
+  const fetchUrl = ((POST === 'development') ? 'http://localhost:3000/db.json' : 'https://color-orgy.vercel.app/db.json'); 
 
   const [covers, setCovers] = useState([])
 
