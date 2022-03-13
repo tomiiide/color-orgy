@@ -10,7 +10,7 @@ const GridLayout = ({ isDarkMode }) => {
 
   console.log(WTF)
 
-  const fetchUrl = (!(WTF) ? 'http://localhost:3000/db.json' : `${WTF}/db.json`); 
+  const fetchUrl = (!(WTF) ? 'http://localhost:3000/db.json' : 'https://color-orgy.vercel.app/db.json'); 
 
   console.log(fetchUrl)
 
