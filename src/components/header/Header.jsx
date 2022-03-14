@@ -31,7 +31,7 @@ const Header = ({isDarkMode, setIsDarkMode}) => {
             <label htmlFor="checkbox" className="cursor-pointer">
               {isDarkMode ? (
                 <div className="w-9 h-6 flex items-center bg-white rounded-full p-1">
-                  <div className="w-4 h-5 bg-black rounded-full shadow switch-ball flex justify-center items-center">
+                  <div className="w-4 h-4 bg-black rounded-full shadow switch-ball flex justify-center items-center">
                     <img
                       src={
                         process.env.PUBLIC_URL + `/assets/images/whh_day.png`
