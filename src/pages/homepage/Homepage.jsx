@@ -13,19 +13,20 @@ const Homepage = () => {
       setLoading(false);
     }, 5000);
   }, []);
+  
   return (
     <div
       className={`h-screen overflow-x-hidden ${
-        isDarkMode ? "dark:bg-black dark:text-white" : ""
+        isDarkMode ? "dark:bg-black dark:text-[#FFFFFFB2]" : ""
       }`}
     >
       {loading ? (
-        <Loadingpage />
+        <Loadingpage isDarkMode={isDarkMode} />
       ) : (
         <>
           <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
           <div className="w-screen">
-            <GridLayout />
+            <GridLayout isDarkMode={isDarkMode} />
           </div>
         </>
       )}
