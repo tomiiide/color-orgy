@@ -11,7 +11,7 @@ const Homepage = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 15000);
   }, []);
   
   return (
