@@ -1,23 +1,17 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import AlbumCard from "../albumCard/AlbumCard";
 
 
 const GridLayout = ({ isDarkMode }) => {
 
-  const location = useLocation().pathname
-
-  console.log(location)
 
   const ENVIRONMENT = process.env.NODE_ENV;
 
-  const WTF = process.env.REACT_APP_VERCEL_URL;
-
-  console.log(WTF)
+  const PROD_FETCH_URL = process.env.REACT_APP_VERCEL_URL;
 
   console.log(ENVIRONMENT)
 
-  const fetchUrl = (!(ENVIRONMENT === 'development') ? 'https://color-orgy.vercel.app/db.json' : 'http://localhost:3000/db.json'); 
+  const fetchUrl = (!(ENVIRONMENT === 'development') ? PROD_FETCH_URL : 'http://localhost:3000/db.json'); 
 
   console.log(fetchUrl)
 
