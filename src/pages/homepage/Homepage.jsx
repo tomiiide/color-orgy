@@ -4,15 +4,15 @@ import Header from "../../components/header/Header";
 import Loadingpage from "../../components/loadingpage/Loadingpage";
 
 const Homepage = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 15000);
-  }, []);
+  // useEffect(() => {
+  //   setLoading(true);
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, 10000);
+  // }, []);
   
   return (
     <div
