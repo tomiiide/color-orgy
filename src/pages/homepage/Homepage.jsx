@@ -19,9 +19,9 @@ const Homepage = () => {
 
     getAlbumsData()
 
-    // setTimeout(() => {
-    //   setLoading(false);
-    // }, 15000);
+    setTimeout(() => {
+      setLoading(false);
+    }, 15000);
 
   }, []);
 
