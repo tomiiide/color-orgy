@@ -7,12 +7,22 @@ const Homepage = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [loading, setLoading] = useState(true);
   const [albums, setAlbums] = useState([]);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 15000);
+
+    const getAlbumsData = async() => {
+      const albumsData = await fetchAlbumsDetails()
+      setAlbums(albumsData)
+    }
+
+    getAlbumsData()
+
+    // setTimeout(() => {
+    //   setLoading(false);
+    // }, 15000);
+
   }, []);
 
 
@@ -23,17 +33,6 @@ const Homepage = () => {
   const fetchUrl = (!(ENVIRONMENT === 'development') ? 'https://color-orgy.vercel.app/db.json' : 'http://localhost:3000/db.json'); 
 
   console.log(fetchUrl)
-
-  useEffect(() => {
-    const getAlbumsData = async() => {
-      const albumsData = await fetchAlbumsDetails()
-      setAlbums(albumsData)
-      // console.log(albums.length())
-      console.log(albums)
-    }
-    getAlbumsData()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
   
 
   const fetchAlbumsDetails = async() => {
@@ -47,7 +46,21 @@ const Homepage = () => {
 
     const retrievedData = await fetchData.json()
 
-    console.log("Retrived Data", retrievedData)
+    // let intervalFunc = setInterval(
+    //   function () {
+        
+    //   }
+    // )
+
+    for(let i = 0; i <= retrievedData.length; i++) {
+
+      let percentage = Math.floor((i / retrievedData.length) * 100);
+      console.log('Percentage: ', `${percentage}%`);
+
+      setProgress(percentage);
+    }
+
+    // setLoading(false)
 
     return retrievedData
   }
@@ -59,7 +72,7 @@ const Homepage = () => {
       }`}
     >
       {loading ? (
-        <Loadingpage isDarkMode={isDarkMode} />
+        <Loadingpage isDarkMode={isDarkMode} percentage={progress}/>
       ) : (
         <>
           <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />

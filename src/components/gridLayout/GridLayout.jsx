@@ -9,9 +9,19 @@ const GridLayout = ({ isDarkMode, albums }) => {
       isDarkMode ? "dark:bg-black dark:text-white" : "bg-white text-black"
     }`}>
       {
+        (albums)
+        ?
+        (
         albums.map((album, index) => {
           return <AlbumCard key={index} albumDetails={album} position={index} isDarkMode={isDarkMode}/>
         })
+        )
+        :
+        (
+          <div className='w-screen h-screen flex items-center justify-center'>
+            <h2>OOOPS...SOMETHING IS WRONG.</h2>
+          </div>
+        )
       }
     </div>
   )
