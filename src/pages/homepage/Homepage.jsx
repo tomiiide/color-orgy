@@ -9,6 +9,7 @@ const Homepage = () => {
   const [albums, setAlbums] = useState([]);
   const [progress, setProgress] = useState(0);
 
+
   useEffect(() => {
     setLoading(true);
 
@@ -46,11 +47,6 @@ const Homepage = () => {
 
     const retrievedData = await fetchData.json()
 
-    // let intervalFunc = setInterval(
-    //   function () {
-        
-    //   }
-    // )
 
     for(let i = 0; i <= retrievedData.length; i++) {
 
@@ -60,7 +56,6 @@ const Homepage = () => {
       setProgress(percentage);
     }
 
-    // setLoading(false)
 
     return retrievedData
   }
