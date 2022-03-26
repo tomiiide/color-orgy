@@ -15,8 +15,12 @@ const Loadingpage = ({ isDarkMode, percentage }) => {
           <img className='w-44 h-auto object-cover absolute top-[50%] left-[40%] lg:top-[50%] lg:left-[40%] z-40' src={process.env.PUBLIC_URL + `/assets/images/loading-image-5.svg`} alt='' />
         </div>
         <div className='w-full h-16 flex items-center justify-center'>
-          <div className='w-4/5 lg:w-1/4 h-4 lg:h-5 p-1 bg-black border-solid border-2 border-white rounded-full'>
-            <div className='h-full flex items-center justify-center bg-white text-black rounded' style={{width: `${percentage}%`, transition: 'ease-in-out 15s'}}>
+          <div className={`w-4/5 lg:w-1/4 h-4 lg:h-5 p-1  border-solid border-2 rounded-full ${
+          isDarkMode ? "dark:bg-black dark:border-white" : "bg-white border-black"
+        }`}>
+            <div className={`h-full flex items-center justify-center rounded ${
+          isDarkMode ? "dark:bg-white" : "bg-black"
+        }`} style={{width: `${percentage}%`, transition: 'ease-in-out 11s'}}>
               {/* {`${percentage}%`} */}
             </div>
           </div>
