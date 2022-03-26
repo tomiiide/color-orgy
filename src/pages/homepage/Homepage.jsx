@@ -22,7 +22,7 @@ const Homepage = () => {
 
     setTimeout(() => {
       setLoading(false);
-    }, 15000);
+    }, 12000);
 
   }, []);
 
