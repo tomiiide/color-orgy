@@ -5,8 +5,8 @@ const AlbumCard = ({ albumDetails, position, isDarkMode }) => {
     <div className='min-w-[120px] min-h-[120px] pb-[5px] cursor-pointer'>
         <div className='w-full h-auto bg-black'><img className='w-full h-auto object-cover' src={process.env.PUBLIC_URL + `/assets/images/${(position % 2) ? 'album-cover-1.svg' : 'album-cover-2.svg'}`} alt='' /></div>
         <div className='w-full h-auto p-[5px]'>
-            <p className='text-sm font-bold truncate'>{albumDetails.album}</p>
-            <p className={`text-sm truncate  ${
+            <p className='text-xs font-bold truncate'>{albumDetails.album}</p>
+            <p className={`text-xs truncate  ${
       isDarkMode ? " dark:text-[#FFFFFF80]" : "text-[#0000007D]"
     }`}>{albumDetails.artist}</p>
             <p className={`text-xs  ${
