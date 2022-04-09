@@ -1,17 +1,24 @@
 import React from "react";
 import "./Header.css";
 
-const Header = ({isDarkMode, setIsDarkMode}) => {
-  
- 
+const Header = ({ isDarkMode, setIsDarkMode }) => {
   return (
     <div className="  pt-[50px] md:flex justify-between relative md:items-end md:pt-[30px] md:pb-[25px] pl-[30px] md:pr-[35px]">
       <div className="flex flex-col  justify-start pl-[11px]">
         <h1 className="text-[24px] md:text-[40px] lg:text-[48px]">
-          A Curation of <span className={`underline ${
+          A Curation of
+          {/* <span className={`underline ${
       isDarkMode ? " dark:text-[#FFFFFF]" : "text-[#000000]"
-    }`}>2020</span>
-          <select></select>
+    }`}>2020</span> */}
+          <select
+            className={`underline border-none outline-none ${
+              isDarkMode ? " dark:text-[#FFFFFF]" : "text-[#000000]"
+            }`}
+          >
+            <option>2020</option>
+            <option>2021</option>
+            <option>2022</option>
+          </select>
         </h1>
         <h1 className="text-[24px] md:text-[40px] lg:text-[48px]">
           Nigerian Albums.
