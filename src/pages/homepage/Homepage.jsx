@@ -4,7 +4,7 @@ import Header from "../../components/header/Header";
 import Loadingpage from "../../components/loadingpage/Loadingpage";
 
 const Homepage = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const [loading, setLoading] = useState(true);
   const [albums, setAlbums] = useState([]);
   const [progress, setProgress] = useState(0);
