@@ -57,7 +57,7 @@ const Homepage = () => {
   
   return (
     <div
-      className={`h-screen overflow-x-hidden ${
+      className={`h-screen overflow-x-hidden relative ${
         isDarkMode ? "dark:bg-black dark:text-[#FFFFFFB2]" : ""
       }`}
     >
