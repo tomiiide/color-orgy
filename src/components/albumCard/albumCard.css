@@ -8,6 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0;
     left: 0;
     top: 0;
     width: 100%;
@@ -19,6 +20,9 @@
 
 .albumText {
     font-family: 'Russo One', sans-serif;
-    color: #725994;
-
+    color: #0505056e;
+    /* background-color: rgba(255, 255, 255, 0.678); */
 }
+
+
+/* w-[300px] h-[500px] */

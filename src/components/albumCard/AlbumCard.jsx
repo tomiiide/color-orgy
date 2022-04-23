@@ -1,5 +1,6 @@
 import './albumCard.css';
 import { useState } from 'react';
+import { IoMdClose } from "react-icons/io";
 
 const AlbumCard = ({ albumDetails, position, isDarkMode }) => {
 
@@ -34,10 +35,11 @@ const AlbumCard = ({ albumDetails, position, isDarkMode }) => {
     return (
       <div>
         <div id='albumCardBackground' className='modalBackground' onClick={closeHandleClick}>
-            <div id='albumCard' className='w-[350px] h-[600px] relative flex flex-col justify-center items-center  bg-white text-black'>
+            <div id='albumCard' className='w-full h-full relative flex flex-col justify-center items-center  bg-white text-black'>
             <div className='w-full h-full' style={{backgroundImage: `url(/assets/images/${(position % 2) ? 'album-cover-1.svg' : 'album-cover-2.svg'})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: '220%', filter: 'blur(3px)', WebkitFilter: 'blur(3px)'}}></div>
             <div className=' absolute top-0 bottom-0 left-0 right-0 flex flex-col flex-start items-center py-[40px] px-[10px]'>
-                <div className='w-4/5 h-auto pb-[15px] px-[15px]' style={{backgroundColor: 'rgba(255, 255, 255, 0.424)'}}>
+                <div className=''><span><IoMdClose /></span></div>
+                <div className='w-4/5 h-auto pb-[15px] px-[15px]' style={{backgroundColor: 'rgba(255, 255, 255, 0.678)'}}>
                   <div className='h-fit py-[4px] flex justify-between items-center'>
                     <p className='font-bold text-base truncate albumText text-[#725994]'>{albumDetails.album}</p>
                     <p className='font-bold text-base truncate albumText text-[#725994]'>{albumDetails.artist}</p>
@@ -47,11 +49,11 @@ const AlbumCard = ({ albumDetails, position, isDarkMode }) => {
                   </div>
                 </div>
                 
-                <div className='p-[10px]'>
-                  <ul>
-                    <li className='btns  bg-[#F2E5EF] px-[15px] py-[8px] my-[15px] cursor-pointer rounded-full flex justify-start items-center'><img className='w-[20px] h-[20px] object-cover mr-[10px]' src={process.env.PUBLIC_URL + `/assets/images/Spotify_icon.png`} alt='' /><p className='text-xs'>Listen on Spotify</p></li>
-                    <li className='btns  bg-[#F2E5EF] px-[15px] py-[8px] my-[15px] cursor-pointer rounded-full flex justify-start items-center'><img className='w-[20px] h-[20px] object-cover mr-[10px]' src={process.env.PUBLIC_URL + `/assets/images/Apple_music_icon.png`} alt='' /><p className='text-xs'>Listen on Apple Music</p></li>
-                    <li className='btns  bg-[#F2E5EF] px-[15px] py-[8px] my-[15px] cursor-pointer rounded-full flex justify-start items-center'><img className='w-[20px] h-[20px] object-cover mr-[10px]' src={process.env.PUBLIC_URL + `/assets/images/audiomack_icon.png`} alt='' /><p className='text-xs'>Listen on Audiomack</p></li>
+                <div className='h-full w-full flex justify-center items-center'>
+                  <ul className='w-[75%]'>
+                    <li className='btns  bg-[#F2E5EF] px-[20px] py-[13px] my-[15px] cursor-pointer rounded-full flex justify-start items-center'><img className='w-[25px] h-[25px] object-cover mr-[15px]' src={process.env.PUBLIC_URL + `/assets/images/Spotify_icon.png`} alt='' /><p className='text-sm'>Listen on Spotify</p></li>
+                    <li className='btns  bg-[#F2E5EF] px-[20px] py-[13px] my-[15px] cursor-pointer rounded-full flex justify-start items-center'><img className='w-[25px] h-[25px] object-cover mr-[15px]' src={process.env.PUBLIC_URL + `/assets/images/Apple_music_icon.png`} alt='' /><p className='text-sm'>Listen on Apple Music</p></li>
+                    <li className='btns  bg-[#F2E5EF] px-[20px] py-[13px] my-[15px] cursor-pointer rounded-full flex justify-start items-center'><img className='w-[25px] h-[25px] object-cover mr-[15px]' src={process.env.PUBLIC_URL + `/assets/images/audiomack_icon.png`} alt='' /><p className='text-sm'>Listen on Audiomack</p></li>
                   </ul>
                 </div>
             </div>
@@ -82,7 +84,7 @@ const AlbumCard = ({ albumDetails, position, isDarkMode }) => {
 
 
   return (
-    <div>
+    <>
       {
         (clicked)
         ?
@@ -90,7 +92,7 @@ const AlbumCard = ({ albumDetails, position, isDarkMode }) => {
         :
         <NormalCard />
       }
-    </div>
+    </>
   )
 }
 
