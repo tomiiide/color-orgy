@@ -34,12 +34,13 @@ const AlbumCard = ({ albumDetails, position, isDarkMode }) => {
   const SelectedAlbum = () => {
     return (
       <div>
-        <div id='albumCardBackground' className='modalBackground' onClick={closeHandleClick}>
+        <div id='albumCardBackground' className='modalBackground'>
             <div id='albumCard' className='w-full h-full relative flex flex-col justify-center items-center  bg-white text-black'>
             <div className='w-full h-full' style={{backgroundImage: `url(/assets/images/${(position % 2) ? 'album-cover-1.svg' : 'album-cover-2.svg'})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: '220%', filter: 'blur(3px)', WebkitFilter: 'blur(3px)'}}></div>
-            <div className=' absolute top-0 bottom-0 left-0 right-0 flex flex-col flex-start items-center py-[40px] px-[10px]'>
-                <div className=''><span><IoMdClose /></span></div>
-                <div className='w-4/5 h-auto pb-[15px] px-[15px]' style={{backgroundColor: 'rgba(255, 255, 255, 0.678)'}}>
+            <div className=' absolute top-0 bottom-0 left-0 right-0 flex flex-col flex-start items-center py-[40px] '>
+                <div className='w-full h-fit mb-[30px] px-[20px] flex justify-end'><IoMdClose className='w-[32px] h-[32px] p-[5px] rounded-full' style={{color: 'rgba(0, 0, 0, 0.3)', backgroundColor: 'rgba(255, 255, 255, 0.678)'}} onClick={closeHandleClick}/></div>
+                <div className='w-full mt-[50px] mb-[30px]'><img className='w-full' src={process.env.PUBLIC_URL + `/assets/images/sound-waves.svg`} alt=''/></div>
+                <div className='w-[65%] h-auto pb-[15px] px-[15px]' style={{backgroundColor: 'rgba(255, 255, 255, 0.44)'}}>
                   <div className='h-fit py-[4px] flex justify-between items-center'>
                     <p className='font-bold text-base truncate albumText text-[#725994]'>{albumDetails.album}</p>
                     <p className='font-bold text-base truncate albumText text-[#725994]'>{albumDetails.artist}</p>
@@ -48,10 +49,9 @@ const AlbumCard = ({ albumDetails, position, isDarkMode }) => {
                     <img className='w-full h-auto object-cover' src={process.env.PUBLIC_URL + `/assets/images/${(position % 2) ? 'album-cover-1.svg' : 'album-cover-2.svg'}`} alt='' />
                   </div>
                 </div>
-                
-                <div className='h-full w-full flex justify-center items-center'>
-                  <ul className='w-[75%]'>
-                    <li className='btns  bg-[#F2E5EF] px-[20px] py-[13px] my-[15px] cursor-pointer rounded-full flex justify-start items-center'><img className='w-[25px] h-[25px] object-cover mr-[15px]' src={process.env.PUBLIC_URL + `/assets/images/Spotify_icon.png`} alt='' /><p className='text-sm'>Listen on Spotify</p></li>
+                <div className='h-fit w-full pt-[25px] flex justify-center items-center'>
+                  <ul className='w-[66%]'>
+                    <li className='btns  bg-[#F2E5EF] px-[20px] py-[13px] mb-[15px] cursor-pointer rounded-full flex justify-start items-center'><img className='w-[25px] h-[25px] object-cover mr-[15px]' src={process.env.PUBLIC_URL + `/assets/images/Spotify_icon.png`} alt='' /><p className='text-sm'>Listen on Spotify</p></li>
                     <li className='btns  bg-[#F2E5EF] px-[20px] py-[13px] my-[15px] cursor-pointer rounded-full flex justify-start items-center'><img className='w-[25px] h-[25px] object-cover mr-[15px]' src={process.env.PUBLIC_URL + `/assets/images/Apple_music_icon.png`} alt='' /><p className='text-sm'>Listen on Apple Music</p></li>
                     <li className='btns  bg-[#F2E5EF] px-[20px] py-[13px] my-[15px] cursor-pointer rounded-full flex justify-start items-center'><img className='w-[25px] h-[25px] object-cover mr-[15px]' src={process.env.PUBLIC_URL + `/assets/images/audiomack_icon.png`} alt='' /><p className='text-sm'>Listen on Audiomack</p></li>
                   </ul>
