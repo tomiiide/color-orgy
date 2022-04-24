@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
 .modalBackground {
     /* display: none; */
     position: fixed;
@@ -6,6 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0;
     left: 0;
     top: 0;
     width: 100%;
@@ -14,3 +17,12 @@
     /* background-color: rgb(0,0,0); */
     background-color: rgba(0, 0, 0, 0.286);
 }
+
+.albumText {
+    font-family: 'Russo One', sans-serif;
+    color: #05050561;
+    /* background-color: rgba(255, 255, 255, 0.478); */
+}
+
+
+/* w-[300px] h-[500px] */
