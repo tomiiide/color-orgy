@@ -35,7 +35,7 @@ const AlbumCard = ({ albumDetails, position, isDarkMode }) => {
     return (
       <div>
         <div className='modalBackground z-2'>
-            <div className='w-full h-full relative flex flex-col justify-center items-center  bg-white text-black z-10 md:w-[60%] md:h-[75%] lg:w-[25%] lg:h-[85%] '>
+            <div className='w-full h-full relative flex flex-col justify-center items-center  bg-white text-black z-10 md:w-[60%] md:h-[75%] lg:w-[32%] lg:h-[86%] xl:w-[27%] xl:h-[74%] 2xl:w-[18%] 2xl:h-[64%]'>
             <div className='w-full h-full' style={{backgroundImage: `url(/assets/images/${(position % 2) ? 'album-cover-1.svg' : 'album-cover-2.svg'})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: '220%', filter: 'blur(3px)', WebkitFilter: 'blur(3px)'}}></div>
             <div className=' absolute top-0 bottom-0 left-0 right-0 flex flex-col flex-start items-center py-[40px] lg:py-[18px] '>
                 <div className='w-full h-fit mb-[30px] px-[20px] lg:mb-[10px] lg:px-[20px] flex justify-end'><IoMdClose className='w-[22px] h-[22px] p-[5px] rounded-full cursor-pointer' style={{color: 'rgba(0, 0, 0, 0.3)', backgroundColor: 'rgba(255, 255, 255, 0.678)'}} onClick={closeHandleClick}/></div>
@@ -51,9 +51,9 @@ const AlbumCard = ({ albumDetails, position, isDarkMode }) => {
                 </div>
                 <div className='h-fit w-full pt-[25px] flex justify-center items-center'>
                   <ul className='w-[56%]'>
-                    <li className='btns  bg-[#F2E5EF] px-[20px] py-[13px] mb-[15px] lg:px-[10px] lg:py-[10px] lg:mb-[10px] cursor-pointer rounded-full flex justify-start items-center'><img className='w-[25px] h-[25px] object-cover mr-[15px] lg:w-[20px] lg:h-[20px]' src={process.env.PUBLIC_URL + `/assets/images/Spotify_icon.png`} alt='' /><p className='text-sm lg:text-xs'>Listen on Spotify</p></li>
-                    <li className='btns  bg-[#F2E5EF] px-[20px] py-[13px] my-[15px] lg:px-[10px] lg:py-[10px] lg:mb-[10px] cursor-pointer rounded-full flex justify-start items-center'><img className='w-[25px] h-[25px] object-cover mr-[15px] lg:w-[20px] lg:h-[20px]' src={process.env.PUBLIC_URL + `/assets/images/Apple_music_icon.png`} alt='' /><p className='text-sm lg:text-xs'>Listen on Apple Music</p></li>
-                    <li className='btns  bg-[#F2E5EF] px-[20px] py-[13px] my-[15px] lg:px-[10px] lg:py-[10px] lg:mb-[10px] cursor-pointer rounded-full flex justify-start items-center'><img className='w-[25px] h-[25px] object-cover mr-[15px] lg:w-[20px] lg:h-[20px]' src={process.env.PUBLIC_URL + `/assets/images/audiomack_icon.png`} alt='' /><p className='text-sm lg:text-xs'>Listen on Audiomack</p></li>
+                    <li className='btns  bg-[#F2E5EF] px-[15px] py-[13px] mb-[15px] lg:px-[10px] lg:py-[10px] lg:mb-[10px] cursor-pointer rounded-full flex justify-start items-center'><img className='w-[22px] h-[22px] object-cover mr-[12px] lg:w-[20px] lg:h-[20px] lg:mr-[10px]' src={process.env.PUBLIC_URL + `/assets/images/Spotify_icon.png`} alt='' /><p className='text-sm lg:text-xs'>Listen on Spotify</p></li>
+                    <li className='btns  bg-[#F2E5EF] px-[15px] py-[13px] my-[15px] lg:px-[10px] lg:py-[10px] lg:mb-[10px] cursor-pointer rounded-full flex justify-start items-center'><img className='w-[22px] h-[22px] object-cover mr-[12px] lg:w-[20px] lg:h-[20px] lg:mr-[10px]' src={process.env.PUBLIC_URL + `/assets/images/Apple_music_icon.png`} alt='' /><p className='text-sm lg:text-xs'>Listen on Apple Music</p></li>
+                    <li className='btns  bg-[#F2E5EF] px-[15px] py-[13px] my-[15px] lg:px-[10px] lg:py-[10px] lg:mb-[10px] cursor-pointer rounded-full flex justify-start items-center'><img className='w-[22px] h-[22px] object-cover mr-[12px] lg:w-[20px] lg:h-[20px] lg:mr-[10px]' src={process.env.PUBLIC_URL + `/assets/images/audiomack_icon.png`} alt='' /><p className='text-sm lg:text-xs'>Listen on Audiomack</p></li>
                   </ul>
                 </div>
             </div>
