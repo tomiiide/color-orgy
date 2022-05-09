@@ -7,17 +7,14 @@ const Header = ({ isDarkMode, setIsDarkMode }) => {
       <div className="flex flex-col  justify-start pl-[11px]">
         <h1 className="text-[24px] md:text-[40px] lg:text-[48px]">
           A Curation of
-          {/* <span className={`underline ${
-      isDarkMode ? " dark:text-[#FFFFFF]" : "text-[#000000]"
-    }`}>2020</span> */}
           <select
-            className={`underline border-none outline-none ${
+            className={`underline border-none outline-none  bg-transparent ${
               isDarkMode ? " dark:text-[#FFFFFF]" : "text-[#000000]"
             }`}
           >
-            <option>2020</option>
-            <option>2021</option>
-            <option>2022</option>
+            <option className="text-black">2020</option>
+            <option className="text-black">2021</option>
+            <option className="text-black">2022</option>
           </select>
         </h1>
         <h1 className="text-[24px] md:text-[40px] lg:text-[48px]">

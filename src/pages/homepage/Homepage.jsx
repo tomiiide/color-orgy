@@ -24,12 +24,13 @@ const Homepage = () => {
       setLoading(false);
     }, 12000);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
 
   const ENVIRONMENT = process.env.NODE_ENV;
 
-  const fetchUrl = (!(ENVIRONMENT === 'development') ? 'https://color-orgy.vercel.app/db.json' : 'http://localhost:3000/db.json');
+  const fetchUrl = (!(ENVIRONMENT === 'development') ? 'https://color-orgy.vercel.app/db.json' : 'http://localhost:3002/db.json');
   
 
   const fetchAlbumsDetails = async() => {

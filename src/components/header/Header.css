@@ -3,3 +3,9 @@
     transform: translateX(11px);
     transition: transform 0.3s linear;
   }
+
+  #checkbox:not(:checked) + label .switch-ball{
+    /* background-color: white; */
+    
+    transition: transform 0.3s linear;
+  }
