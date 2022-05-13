@@ -17,7 +17,7 @@ const Header = ({ isDarkMode, setIsDarkMode }) => {
             <option className="text-black">2022</option>
           </select>
         </h1>
-        <h1 className="text-[24px] md:text-[40px] lg:text-[48px]">
+        <h1 className="text-[24px] md:text-[40px] lg:text-[47.5px]">
           Nigerian Albums.
         </h1>
       </div>
