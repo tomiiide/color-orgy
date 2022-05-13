@@ -24,6 +24,7 @@ const Homepage = () => {
       setLoading(false);
     }, 12000);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
 
