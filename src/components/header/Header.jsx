@@ -8,7 +8,7 @@ const Header = ({ isDarkMode, setIsDarkMode }) => {
         <h1 className="text-[24px] md:text-[40px] lg:text-[48px]">
           A Curation of
           <select
-            className={`underline border-none outline-none  bg-transparent ${
+            className={`underline border-none outline-none ml-[5px] cursor-pointer bg-transparent ${
               isDarkMode ? " dark:text-[#FFFFFF]" : "text-[#000000]"
             }`}
           >
