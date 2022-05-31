@@ -46,15 +46,11 @@ const Homepage = () => {
 
     for(let i = 0; i <= retrievedData.length; i++) {
       let percentage = Math.floor((i / retrievedData.length) * 100);
-      // console.log('Percentage: ', `${percentage}%`);
       setProgress(percentage);
     }
     return retrievedData
   }
 
-  //Console logs Environment and Fetch URL
-  // console.log(ENVIRONMENT);
-  // console.log(fetchUrl);
   
   return (
     <div
