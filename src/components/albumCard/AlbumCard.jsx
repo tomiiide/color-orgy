@@ -2,10 +2,9 @@ import './albumCard.css';
 import { useState } from 'react';
 import { IoMdClose } from "react-icons/io";
 
-const AlbumCard = ({ albumDetails, position, isDarkMode }) => {
+const AlbumCard = ({ albumDetails, position, isDarkMode, isLoading }) => {
 
   const [clicked, setClicked] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
 
   const openHandleClick = () => {
     setClicked(true);
