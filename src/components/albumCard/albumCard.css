@@ -21,7 +21,17 @@
 .albumText {
     font-family: 'Russo One', sans-serif;
     color: #05050561;
-    /* background-color: rgba(255, 255, 255, 0.478); */
+    /* background-color: rgba(255, 255, 255, 0.13) */
+}
+
+.albumSkeletonLoader {
+    animation: skeleton 1s ease infinite alternate;
+}
+
+@keyframes skeleton {
+    to {
+        opacity: 0.5;
+    }
 }
 
 

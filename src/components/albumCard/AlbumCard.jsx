@@ -5,6 +5,7 @@ import { IoMdClose } from "react-icons/io";
 const AlbumCard = ({ albumDetails, position, isDarkMode }) => {
 
   const [clicked, setClicked] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const openHandleClick = () => {
     setClicked(true);
@@ -16,20 +17,7 @@ const AlbumCard = ({ albumDetails, position, isDarkMode }) => {
     console.log(clicked);
   }
 
-  // const album = document.getElementById('albumCard');
 
-  // const albumBg = document.getElementById('albumCardBackground');
-
-  // const clickFunc = () => {
-  //   albumBg.style.display= 'block';
-  //   album.classList.add = 'clickedAlbum';
-  // }
-
-  // window.onclick = function(event) {
-  //   if (event.target == albumBg) {
-  //     albumBg.style.display = "none";
-  //   }
-  // }
 
   const SelectedAlbum = () => {
     return (
@@ -67,18 +55,35 @@ const AlbumCard = ({ albumDetails, position, isDarkMode }) => {
 
   const NormalCard = () => {
     return (
-      <div id='albumCard' className={`min-w-[120px] min-h-[120px] pb-[5px] cursor-pointer ${(clicked) ? 'clickedAlbum' : ''}`} onClick={openHandleClick}>
-          <div className='w-full h-auto bg-black'><img className='w-full h-auto object-cover' src={process.env.PUBLIC_URL + `/assets/images/${(position % 2) ? 'album-cover-1.svg' : 'album-cover-2.svg'}`} alt='' /></div>
-          <div className='w-full h-auto p-[5px]'>
-              <p className='text-sm font-bold truncate'>{albumDetails.album}</p>
-              <p className={`text-sm truncate  ${
-        isDarkMode ? " dark:text-[#FFFFFF80]" : "text-[#0000007D]"
-      }`}>{albumDetails.artist}</p>
-              <p className={`text-xs  ${
-        isDarkMode ? " dark:text-[#FFFFFF80]" : "text-[#0000007D]"
-      }`}>{albumDetails.date}</p>
-          </div>
-      </div>
+
+      (isLoading) 
+      ?
+      (
+        <div id='albumCard' className={`min-w-[120px] w-max-[220px] min-h-[120px] h-[220px] p-[5px] cursor-pointer albumSkeletonLoader`}>
+            <div className={`w-full h-[70%] ${ isDarkMode ? "bg-[#313131]" : "bg-[#8a8888]" }`}></div>
+            <div className='w-full h-[30%] py-[5px]'>
+                <div className={`w-[80%] h-[20%] mb-[5px] ${ isDarkMode ? "bg-[#313131]" : "bg-[#8a8888]" }`}></div>
+                <div className={`w-[60%] h-[20%] mb-[5px] ${ isDarkMode ? "bg-[#313131]" : "bg-[#8a8888]" }`}></div>
+                <div className={`w-[40%] h-[20%] ${ isDarkMode ? "bg-[#313131]" : "bg-[#8a8888]" }`}></div>
+            </div>
+        </div>
+      )
+      :
+      (
+        <div id='albumCard' className={`min-w-[120px] min-h-[120px] pb-[5px] cursor-pointer ${(clicked) ? 'clickedAlbum' : ''}`} onClick={openHandleClick}>
+            <div className='w-full h-auto bg-black'><img className='w-full h-auto object-cover' src={process.env.PUBLIC_URL + `/assets/images/${(position % 2) ? 'album-cover-1.svg' : 'album-cover-2.svg'}`} alt='' /></div>
+            <div className='w-full h-auto p-[5px]'>
+                <p className='text-sm font-bold truncate'>{albumDetails.album}</p>
+                <p className={`text-sm truncate  ${
+          isDarkMode ? " dark:text-[#FFFFFF80]" : "text-[#0000007D]"
+        }`}>{albumDetails.artist}</p>
+                <p className={`text-xs  ${
+          isDarkMode ? " dark:text-[#FFFFFF80]" : "text-[#0000007D]"
+        }`}>{albumDetails.date}</p>
+            </div>
+        </div>
+      )
+      
     )
   }
 
