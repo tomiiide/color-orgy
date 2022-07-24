@@ -21,11 +21,11 @@ const AlbumCard = ({ albumDetails, position, isDarkMode, isLoading }) => {
   const SelectedAlbum = () => {
     return (
       <div>
-        <div className='modalBackground z-2'>
-            <div className='w-full h-full relative flex flex-col justify-center items-center  bg-white text-black z-10 md:w-[60%] md:h-[75%] lg:w-[32%] lg:h-[86%] xl:w-[27%] xl:h-[74%] 2xl:w-[18%] 2xl:h-[64%]'>
+        <div className='modalBackground z-2' onClick={closeHandleClick}>
+            <div className='w-full h-full relative flex flex-col justify-center items-center  bg-white text-black z-10 md:w-[60%] md:h-[75%] lg:w-[32%] lg:h-[86%] xl:w-[27%] xl:h-[94%] 2xl:w-[18%] 2xl:h-[64%]' onClick={e => e.stopPropagation()}>
             <div className='w-full h-full' style={{backgroundImage: `url(/assets/images/${(position % 2) ? 'album-cover-1.svg' : 'album-cover-2.svg'})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: '220%', filter: 'blur(3px)', WebkitFilter: 'blur(3px)'}}></div>
             <div className=' absolute top-0 bottom-0 left-0 right-0 flex flex-col flex-start items-center py-[40px] lg:py-[18px] '>
-                <div className='w-full h-fit mb-[30px] px-[20px] lg:mb-[10px] lg:px-[20px] flex justify-end'><IoMdClose className='w-[22px] h-[22px] p-[5px] rounded-full cursor-pointer' style={{color: 'rgba(0, 0, 0, 0.3)', backgroundColor: 'rgba(255, 255, 255, 0.678)'}} onClick={closeHandleClick}/></div>
+                <div className='w-full h-fit mb-[30px] px-[20px] lg:mb-[10px] lg:px-[20px] flex justify-end'><IoMdClose className='block md:hidden w-[22px] h-[22px] p-[5px] rounded-full cursor-pointer' style={{color: 'rgba(0, 0, 0, 0.3)', backgroundColor: 'rgba(255, 255, 255, 0.678)'}} onClick={closeHandleClick}/></div>
                 <div className='w-full mt-[50px] mb-[30px] lg:mt-[15px] lg:mb-[10px]'><img className='w-full' src={process.env.PUBLIC_URL + `/assets/images/sound-waves.svg`} alt=''/></div>
                 <div className='w-[55%] h-auto pb-[15px] px-[15px] lg:px-[8px] lg:pb-[8px]' style={{backgroundColor: 'rgba(255, 255, 255, 0.44)'}}>
                   <div className='h-fit py-[4px] flex justify-between items-center'>
