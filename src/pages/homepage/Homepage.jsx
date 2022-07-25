@@ -56,18 +56,13 @@ const Homepage = () => {
     <div
       className={`h-screen overflow-x-hidden relative ${
         isDarkMode ? "dark:bg-black dark:text-[#FFFFFFB2]" : ""
-      }`}
+      } ${loading ? 'overflow-y-hidden' : '' }`}
     >
-      {loading ? (
-        <Loadingpage isDarkMode={isDarkMode} percentage={progress}/>
-      ) : (
-        <>
-          <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-          <div className="w-screen">
-            <GridLayout isDarkMode={isDarkMode} albums={albums}/>
-          </div>
-        </>
-      )}
+      <Loadingpage isDarkMode={isDarkMode} percentage={progress} loading={loading}/>
+      <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+      <div className="w-screen">
+        <GridLayout isDarkMode={isDarkMode} albums={albums}/>
+      </div>
     </div>
   );
 };

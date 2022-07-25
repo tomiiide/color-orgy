@@ -16,13 +16,16 @@ const AlbumCard = ({ albumDetails, position, isDarkMode, isLoading }) => {
     console.log(clicked);
   }
 
+  const onLoadHandle = () => {
+    console.log('Image Loaded!!');
+  }
 
 
   const SelectedAlbum = () => {
     return (
       <div>
         <div className='modalBackground z-2' onClick={closeHandleClick}>
-            <div className='w-full h-full relative flex flex-col justify-center items-center  bg-white text-black z-10 md:w-[60%] md:h-[75%] lg:w-[32%] lg:h-[86%] xl:w-[27%] xl:h-[94%] 2xl:w-[18%] 2xl:h-[64%]' onClick={e => e.stopPropagation()}>
+            <div className='w-full h-screen relative flex flex-col justify-center items-center  bg-white text-black z-10 md:w-[60%] md:h-[75%] lg:w-[32%] lg:h-[86%] xl:w-[27%] xl:h-[94%] 2xl:w-[18%] 2xl:h-[64%]' onClick={e => e.stopPropagation()}>
             <div className='w-full h-full' style={{backgroundImage: `url(/assets/images/${(position % 2) ? 'album-cover-1.svg' : 'album-cover-2.svg'})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: '220%', filter: 'blur(3px)', WebkitFilter: 'blur(3px)'}}></div>
             <div className=' absolute top-0 bottom-0 left-0 right-0 flex flex-col flex-start items-center py-[40px] lg:py-[18px] '>
                 <div className='w-full h-fit mb-[30px] px-[20px] lg:mb-[10px] lg:px-[20px] flex justify-end'><IoMdClose className='block md:hidden w-[22px] h-[22px] p-[5px] rounded-full cursor-pointer' style={{color: 'rgba(0, 0, 0, 0.3)', backgroundColor: 'rgba(255, 255, 255, 0.678)'}} onClick={closeHandleClick}/></div>
@@ -54,23 +57,8 @@ const AlbumCard = ({ albumDetails, position, isDarkMode, isLoading }) => {
 
   const NormalCard = () => {
     return (
-
-      (isLoading) 
-      ?
-      (
-        <div id='albumCard' className={`min-w-[120px] w-max-[220px] min-h-[120px] h-[220px] p-[5px] cursor-pointer albumSkeletonLoader`}>
-            <div className={`w-full h-[70%] ${ isDarkMode ? "bg-[#313131]" : "bg-[#8a8888]" }`}></div>
-            <div className='w-full h-[30%] py-[5px]'>
-                <div className={`w-[80%] h-[20%] mb-[5px] ${ isDarkMode ? "bg-[#313131]" : "bg-[#8a8888]" }`}></div>
-                <div className={`w-[60%] h-[20%] mb-[5px] ${ isDarkMode ? "bg-[#313131]" : "bg-[#8a8888]" }`}></div>
-                <div className={`w-[40%] h-[20%] ${ isDarkMode ? "bg-[#313131]" : "bg-[#8a8888]" }`}></div>
-            </div>
-        </div>
-      )
-      :
-      (
         <div id='albumCard' className={`min-w-[120px] min-h-[120px] pb-[5px] cursor-pointer ${(clicked) ? 'clickedAlbum' : ''}`} onClick={openHandleClick}>
-            <div className='w-full h-auto bg-black'><img className='w-full h-auto object-cover' src={process.env.PUBLIC_URL + `/assets/images/${(position % 2) ? 'album-cover-1.svg' : 'album-cover-2.svg'}`} alt='' /></div>
+            <div className='w-full h-auto bg-black'><img onLoad={onLoadHandle} className='w-full h-auto object-cover' src={process.env.PUBLIC_URL + `/assets/images/${(position % 2) ? 'album-cover-1.svg' : 'album-cover-2.svg'}`} alt='' /></div>
             <div className='w-full h-auto p-[5px]'>
                 <p className='text-sm font-bold truncate'>{albumDetails.album}</p>
                 <p className={`text-sm truncate  ${
@@ -82,8 +70,6 @@ const AlbumCard = ({ albumDetails, position, isDarkMode, isLoading }) => {
             </div>
         </div>
       )
-      
-    )
   }
 
 

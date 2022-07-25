@@ -1,13 +1,13 @@
 
-const Loadingpage = ({ isDarkMode, percentage }) => {
+const Loadingpage = ({ isDarkMode, percentage, loading }) => {
 
   // console.log('Loading Percentage: ', percentage);
 
   return (
-    <div className='w-screen h-screen flex items-center justify-center flex-col'>
-        <div className={`w-screen h-3/4 flex items-center justify-center ${
-          isDarkMode ? "dark:bg-black dark:text-white" : "bg-white text-black"
-        }`}>
+    <div className={`absolute z-10 top-0 bottom-0 right-0 left-0 items-center justify-center flex-col ${
+      isDarkMode ? "dark:bg-black dark:text-white" : "bg-white text-black"
+    }  ${loading ? 'flex' : 'hidden'}`}>
+        <div className='w-full h-full flex items-center justify-center'>
           <img className='w-50 h-auto object-cover absolute top-[38%] right-[10%] lg:top-[32%] lg:right-[36%] z-30' src={process.env.PUBLIC_URL + `/assets/images/loading-image-1.svg`} alt='' />
           <img className='w-42 h-auto object-cover absolute top-[27%] left-[5%] lg:top-[22%] lg:left-[38.2%] z-10' src={process.env.PUBLIC_URL + `/assets/images/loading-image-2.svg`} alt='' />
           <img className='w-40 h-auto object-cover absolute top-[27%] right-[10%] lg:top-[23%] lg:right-[33.5%] z-20' src={process.env.PUBLIC_URL + `/assets/images/loading-image-3.svg`} alt='' />
